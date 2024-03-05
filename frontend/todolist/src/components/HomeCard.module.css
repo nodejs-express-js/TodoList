@@ -1,0 +1,33 @@
+/* HomeCard.module.css */
+.homeCard {
+  border: 1px solid #ccc;
+  padding: 30px; /* Increased padding */
+  margin-bottom: 20px; /* Increased margin */
+  font-size: 18px; /* Increased font size */
+}
+
+.task {
+  font-weight: bold;
+  font-size: 20px; /* Larger font size */
+  margin-bottom: 10px; /* Increased spacing */
+}
+
+.subtask {
+  color: #666;
+  font-size: 18px; /* Increased font size */
+  margin-bottom: 10px; /* Increased spacing */
+}
+
+.minicontainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.time {
+  font-style: italic;
+  font-size: 18px; /* Increased font size */
+}
+
+#deletebutton {
+  cursor: pointer;
+}
