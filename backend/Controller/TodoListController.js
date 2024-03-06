@@ -2,7 +2,7 @@ const todoListModel=require("../Model/TodoListModel")
 
 const GetTodoList=async(req,res)=>{
     try{
-        const tasks=await todoListModel.find({})
+        const tasks=await todoListModel.find({user_id:req.user._id})
         res.status(200).json(tasks)
         
     }
@@ -15,7 +15,7 @@ const GetTodoList=async(req,res)=>{
 
 const PostTodoList=async(req,res)=>{
     try{
-        const task=await todoListModel.create({...req.body})
+        const task=await todoListModel.create({...req.body,user_id:req.user._id})
         res.status(200).json(task)
     }
     catch(error){
@@ -26,7 +26,7 @@ const PostTodoList=async(req,res)=>{
 const DeleteTodoList=async(req,res)=>{
     
     try{
-        const task=await todoListModel.deleteOne({_id:req.params.id})
+        const task=await todoListModel.deleteOne({_id:req.params.id,user_id:req.user._id})
         res.status(200).json(task)
     }
     catch(error){
@@ -37,7 +37,7 @@ const DeleteTodoList=async(req,res)=>{
 
 const PatchTodoList=async(req,res)=>{
     try{
-        const task=await todoListModel.replaceOne({_id:req.params.id},{...req.body})
+        const task=await todoListModel.replaceOne({_id:req.params.id,user_id:req.user._id},{...req.body,user_id:req.user._id})
         res.status(200).json(task)
     }
     catch(error){

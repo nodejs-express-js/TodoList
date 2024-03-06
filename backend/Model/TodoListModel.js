@@ -10,6 +10,10 @@ required:true
 },
 subtask:{
     type:String,
+},
+user_id:{
+    type:String,
+    required:true
 }
 },{ timestamps: true }
 )

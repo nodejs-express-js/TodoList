@@ -7,6 +7,7 @@ export default defineConfig({
   server:{
   proxy: {
     '/todolist': 'http://localhost:4000',
+    '/user':'http://localhost:4000'
   }
   }
 })
